@@ -1,0 +1,26 @@
+name : Building Block Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    echo-hello-world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Hello World
+              run: echo "Hello World"
+    echo-fail:
+        runs-on: ubuntu-latest
+        steps:
+            - name: exit step
+              run: |
+                echo "I will fail"
+                exit 1
+
+    echo-goodbye-world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Goodbye World
+              run: echo "Goodbye World"
