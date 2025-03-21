@@ -1,5 +1,4 @@
 name : Building Block Example
-
 on:
   push:
     branches:
@@ -10,5 +9,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Echo Hello World
-              run: ${{ github.event_name }} Hello World
+              run: echo  "${{ github.event_name }}" 
    
