@@ -1,13 +1,13 @@
 name : Building Block Example
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
-    echo-check-trigger:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Echo Hello World
-              run: echo  "${{ github.event_name }}" 
+  echo-check-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello World
+        run: "echo 'Timestamp: $(date +'%Y-%m-%d %H:%M:%S')'"
+
    
