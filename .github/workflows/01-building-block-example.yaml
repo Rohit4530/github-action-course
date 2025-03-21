@@ -1,13 +1,14 @@
 name : Building Block Example
 on:
-  schedule:
-    - cron: '* * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   echo-check-trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo Hello World
+      - name: Print timestamp
         run: "echo 'Timestamp: $(date +'%Y-%m-%d %H:%M:%S')'"
 
    
