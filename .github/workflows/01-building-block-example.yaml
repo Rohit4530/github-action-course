@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-    echo-hello-world:
+    echo-check-trigger:
         runs-on: ubuntu-latest
         steps:
             - name: Echo Hello World
