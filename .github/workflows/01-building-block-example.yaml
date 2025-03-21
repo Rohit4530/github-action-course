@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print timestamp
-        run: "echo 'Timestamp: $(date +'%Y-%m-%d %H:%M:%S')'"
+        run: $(date +\"%Y-%m-%d %H:%M:%S\")"
 
    
