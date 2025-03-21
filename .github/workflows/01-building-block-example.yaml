@@ -10,17 +10,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Echo Hello World
-              run: echo "Hello World"
-    echo-success:
-        runs-on: ubuntu-latest
-        steps:
-            - name: exit step
-              run: |
-                echo "I will succeed"
-                exit 0
-
-    echo-goodbye-world:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Echo Goodbye World
-              run: echo "Goodbye World"
+              run: ${{ github.event_name }} Hello World
+   
