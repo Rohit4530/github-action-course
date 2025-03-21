@@ -11,13 +11,13 @@ jobs:
         steps:
             - name: Echo Hello World
               run: echo "Hello World"
-    echo-fail:
+    echo-success:
         runs-on: ubuntu-latest
         steps:
             - name: exit step
               run: |
-                echo "I will fail"
-                exit 1
+                echo "I will succeed"
+                exit 0
 
     echo-goodbye-world:
         runs-on: ubuntu-latest
