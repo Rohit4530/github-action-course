@@ -1,7 +1,7 @@
 name : Building Block Example
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '* * * * *'
 
 jobs:
   echo-check-trigger:
