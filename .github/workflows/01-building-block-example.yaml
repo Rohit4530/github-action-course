@@ -9,6 +9,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Print timestamp
-        run: bash
+        run: echo "$RUNNER_OS"
 
    
