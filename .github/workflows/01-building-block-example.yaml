@@ -6,9 +6,9 @@ on:
 
 jobs:
   echo-check-trigger:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Print timestamp
-        run: echo "$RUNNER_OS"
+        run: echo "hostname"
 
    
