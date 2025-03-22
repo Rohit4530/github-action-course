@@ -1,12 +1,14 @@
 name : Building Block Example
 on:
- workflow_dispatch:
+ push:
+   branches:
+     - main
 
 jobs:
   echo-check-trigger:
     runs-on: ubuntu-latest
     steps:
       - name: Print timestamp
-        run: date
+        run: bash
 
    
