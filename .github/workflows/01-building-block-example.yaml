@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print timestamp
-        run: echo "$hostname"
+        run: echo "$(date)"
+
+      - name: Print hostname
+        run: echo "$HOSTNAME"
 
    
