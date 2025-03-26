@@ -1,8 +1,6 @@
 name: context-checking
 on:
-    push :    
-        branches:
-         - main
+  workflow_dispatch
 jobs:
     check-context:
       runs-on: ubuntu-latest
