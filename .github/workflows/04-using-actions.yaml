@@ -1,0 +1,10 @@
+name : 04-using-actions
+on: [push]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name : printing directory structure 
+              run: ls -lart
