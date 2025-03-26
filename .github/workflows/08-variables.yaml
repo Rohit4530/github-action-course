@@ -1,0 +1,16 @@
+name: 08-using-variables
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+        
+jobs:
+    echo-check-trigger:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        env:
+            STEP_VAR: "I am a step variable"
+        steps:
+            - name: Print trigger event
+              run: echo "${{ env.STEP_VAR }}"

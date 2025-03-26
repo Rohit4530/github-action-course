@@ -1,11 +1,6 @@
 name : experssions 
 on: 
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:   
-            - main
+   workflow_dispatch
 jobs:
     echo-check-trigger:
         if: github.event_name == 'push'
