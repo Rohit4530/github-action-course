@@ -11,5 +11,5 @@ jobs:
         if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
-            - name: Print timestamp
+            - name: Print trigger event
               run: echo "i was trigger by ${{github.event_name}} event"
