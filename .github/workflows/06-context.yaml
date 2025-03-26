@@ -1,4 +1,4 @@
-name: context
+name: context-checking
 on:
     push :    
         branches:
