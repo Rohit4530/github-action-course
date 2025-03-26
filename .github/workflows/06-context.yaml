@@ -1,0 +1,11 @@
+name: context
+on:
+    push :    
+        branches:
+         - main
+jobs:
+    check-context:
+      runs-on: ubuntu-latest
+      steps:
+         - name : check the timestamp 
+           run : $(date)
