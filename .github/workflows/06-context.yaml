@@ -15,3 +15,8 @@ jobs:
             echo "workflow: ${{github.workflow}}"
             echo "run number: ${{github.run_number}}"
             echo "run id: ${{github.run_id}}"
+
+         - name : varibale context
+           run : |
+           e
+
