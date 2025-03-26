@@ -7,5 +7,11 @@ jobs:
     check-context:
       runs-on: ubuntu-latest
       steps:
-         - name : check the timestamp 
-           run : echo  "$(date)"
+         - name : display information
+           run : |
+            echo  "event name : ${{github.event_name}}"
+            echo "ref: ${{github.ref}}"
+            echo "sha: ${{github.sha}}"
+            echo "workflow: ${{github.workflow}}"
+            echo "run number: ${{github.run_number}}"
+            echo "run id: ${{github.run_id}}"
