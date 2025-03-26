@@ -1,0 +1,16 @@
+name : pull request trigger
+on: 
+    pull_request:
+        types:
+          - opened
+          - synchronize
+          - reopened
+        branches:
+          - main
+        
+jobs:
+    echo-check-trigger:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print timestamp
+              run: echo "$(date)"
