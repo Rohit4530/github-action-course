@@ -18,5 +18,6 @@ jobs:
 
          - name : varibale context
            run : |
-           e
+            echo "${{vars.MY_VAR}}"
+
 
