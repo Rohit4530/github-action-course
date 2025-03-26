@@ -1,8 +1,5 @@
 name : Building Block Example
-on:
- push:
-   branches:
-     - main
+on: workflow_dispatch
 
 jobs:
   echo-check-trigger:
