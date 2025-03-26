@@ -8,4 +8,4 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - name : check the timestamp 
-           run : $(date)
+           run : echo  "$(date)"
