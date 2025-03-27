@@ -16,5 +16,5 @@ jobs:
               if: cancelled()
               run: echo "this run is cancelled"
             - name : non cancelled run
-              if: !cancelled()
+              if: ${{!cancelled()}}
               run: echo "this run is not cancelled" 
