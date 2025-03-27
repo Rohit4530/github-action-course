@@ -12,12 +12,9 @@ jobs:
             - name : failed run
               if: failure()
               run: echo "previos run is a failed run"
-            - name: always run
-              if: always()
-              run: echo "this will always run"
             - name: cancelled run
               if: cancelled()
               run: echo "this run is cancelled"
             - name : non cancelled run
-              if: !cancelled()
+              if: ${{!cancelled()}}
               run: echo "this run is not cancelled" 
