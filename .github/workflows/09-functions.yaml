@@ -1,0 +1,20 @@
+name : functions in github actions
+on : 
+    pull_request:
+    workflow_dispatch:
+jobs:
+    echo-check-trigger:
+        runs-on: ubuntu-latest
+        steps:
+            - name: sucessful run
+              if: success()
+              run: echo "previos  is a sucessful run"
+            - name : failed run
+              if: failure()
+              run: echo "previos run is a failed run"
+            - name: cancelled run
+              if: cancelled()
+              run: echo "this run is cancelled"
+            - name : non cancelled run
+              if: !cancelled()
+              run: echo "this run is not cancelled" 
