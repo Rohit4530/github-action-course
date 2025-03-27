@@ -24,7 +24,7 @@ jobs:
             - name: Unit Test
               run: echo "This is the unit test stage"
             - name: Failing Test 
-              if: ${{ github.event.inputs.pass-unit-test == false }}
+              if: ${{ github.event.inputs.pass-unit-test == true }}
               run: exit 1
 
     deploy-nonprod:
