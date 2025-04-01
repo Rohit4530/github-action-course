@@ -24,7 +24,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                    node-version: '20.x'  # ✅ Use a stable version
+                    node-version: '22.x'  # ✅ Use a stable version
                     cache: 'npm'  # ✅ GitHub Actions' built-in caching
 
             - name: Cache dependencies
