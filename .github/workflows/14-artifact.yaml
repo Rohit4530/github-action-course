@@ -1,45 +1,38 @@
-name: 13-caching
+name: 14-artifact
 on: 
+    push:
+        branches: 
+            - main
     workflow_dispatch:
         inputs:
             use-cache:
                 type: boolean
                 description: "use cache"
                 default: true
-
 defaults:
-   run: 
-         working-directory: react-app
-
-jobs:
-    checkout:
+    run: 
+        working-directory: react-app
+jobs: 
+    build:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
+            - name : checkout code
               uses: actions/checkout@v3
-
             - name: Setup Node.js
               uses: actions/setup-node@v3.5.1
               with:
                     node-version: '22.x'  
                     cache: 'npm' 
                     cache-dependency-path: react-app/package-lock.json
-
-            - name: Cache dependencies
-              id: cache
+            - name : cache
               uses: actions/cache@v4
+              id: cache
               with:
-                    path: react-app/node_modules 
-                    key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-                    restore-keys: |
+                path: react-app/node_modules
+                key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
                         ${{ runner.os }}-node-modules-
-
-            - name: Install dependencies
+            - name: install dependencies
               if: steps.cache.outputs.cache-hit != 'true'
-              run: npm ci  
+              run: npm ci
 
-            - name: Build the application
-              run: npm run build 
-
-            - name: Run unit tests
-              run: npm run test
