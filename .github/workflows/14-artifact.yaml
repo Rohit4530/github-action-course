@@ -35,4 +35,24 @@ jobs:
             - name: install dependencies
               if: steps.cache.outputs.cache-hit != 'true'
               run: npm ci
+            - name : test the code 
+              run : npm run test
+            - name : build the code
+              run : npm run build
+            - name : upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: react-app-build
+                path: react-app/build
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+            - name : download artifact
+              uses: actions/download-artifact@v3
+              with:
+                   name: react-app-build
+                   path: react-app/build
+            - name : show dir structure
+              run: ls -R
 
