@@ -32,7 +32,7 @@ jobs:
               id: cache
               uses: actions/cache@v4
               with:
-                    path: node_modules  # ✅ Cache node_modules instead
+                    path: react-app/node_modules  # ✅ Cache node_modules instead
                     key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
                     restore-keys: |
                         ${{ runner.os }}-node-modules-
