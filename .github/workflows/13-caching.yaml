@@ -38,7 +38,8 @@ jobs:
                         ${{ runner.os }}-node-modules-
 
             - name: Install dependencies
-              run: npm ci  # ✅ Always run npm ci to ensure node_modules exists
+              if: steps.cache.outputs.cache-hit != 'true'
+              run: npm ci  
 
             - name: Build the application
               run: npm run build 
