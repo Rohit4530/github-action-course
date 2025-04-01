@@ -1,8 +1,5 @@
 name : 10-working-with-inputs
 on: 
-    push:
-        branches: 
-            - main
     workflow_dispatch:
         inputs:
             dry-run:
