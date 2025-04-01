@@ -26,6 +26,7 @@ jobs:
               with:
                     node-version: '22.x'  # ✅ Use a stable version
                     cache: 'npm'  # ✅ GitHub Actions' built-in caching
+                    cache-dependency-path: react-app/package-lock.json
 
             - name: Cache dependencies
               id: cache
