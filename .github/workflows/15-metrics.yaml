@@ -34,6 +34,9 @@ jobs:
                 include:
                   - color: red
                     shape: triangle
+                exclude:
+                  - color: green
+                    shape: square
         steps:
             - name: sdummy step
               run: |
