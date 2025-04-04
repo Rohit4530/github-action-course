@@ -1,0 +1,24 @@
+name : metrics in github actions
+on: 
+    push:
+        branches: [ main ]
+    workflow_dispatch: 
+jobs:
+    backwords_compatibility:
+      name : ${{ matrix.node-version }} on ${{ matrix.os }}
+      runs-on: ${{ matrix.os }}
+      strategy:
+          matrix:
+              node-version: [16.x,18.x,20.x]
+              os: [ubuntu-latest, windows-latest]
+      steps:
+        - name: setup node
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name : perform some steps
+          run: |
+              echo "node version is ${{ matrix.node-version }}"
+              echo "os is ${{ matrix.os }}"
+              echo "hello world"
+               

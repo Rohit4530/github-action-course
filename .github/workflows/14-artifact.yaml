@@ -1,8 +1,8 @@
 name: 14-artifact
 on: 
-    push:
-        branches: 
-            - main
+    # push:
+    #     branches: 
+    #         - main
     workflow_dispatch:
         inputs:
             use-cache:
@@ -54,5 +54,5 @@ jobs:
                    name: react-app-build
                    path: react-app/build
             - name : show dir structure
-              run: ls -R
+              run: ls -lrt
 
