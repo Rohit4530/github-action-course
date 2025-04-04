@@ -34,4 +34,9 @@ jobs:
                 include:
                   - color: red
                     shape: triangle
+        steps:
+            - name: sdummy step
+              run: |
+                echo "size is ${{ matrix.size }}"
+               
                
