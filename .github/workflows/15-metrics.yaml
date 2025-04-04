@@ -23,7 +23,7 @@ jobs:
               echo "node version is ${{ matrix.node-version }}"
               echo "os is ${{ matrix.os }}"
               echo "hello world"
-     include-example:
+    include-example:
         name : ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}
         runs-on: ubuntu-latest
         strategy:
@@ -31,7 +31,7 @@ jobs:
                 color: [red, green]
                 shape: [circle, square]
                 size: [small, large]
-            include:
-                color: red
-                shape: triangle
+                include:
+                  - color: red
+                    shape: triangle
                
