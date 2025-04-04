@@ -1,7 +1,5 @@
 name : metrics in github actions
 on: 
-    push:
-        branches: [ main ]
     workflow_dispatch: 
 jobs:
     backwords_compatibility:

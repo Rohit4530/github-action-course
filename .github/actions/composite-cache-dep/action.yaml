@@ -1,0 +1,35 @@
+name: Setup node and cache dependencies
+description: Setup node and cache dependencies
+inputs:
+  node-version:
+    description: Node version
+    required: false
+    default: '16.x'
+  working-directory:
+    description: Working directory
+    required: false
+    default: '.'
+ 
+runs: 
+  using: composite
+  steps:
+    - name: Setup Node.js - ${{ inputs.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ${{inputs.working-directory}}/node_modules
+        key: ${{ runner.os }}-node-${{ inputs.node-version }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ inputs.node-version }}
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      working-directory: ${{ inputs.working-directory }}
+      shell: bash
+      with:
+        working-directory: ${{ inputs.working-directory }}
+       
