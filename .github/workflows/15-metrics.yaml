@@ -7,7 +7,9 @@ jobs:
     backwords_compatibility:
       name : ${{ matrix.node-version }} on ${{ matrix.os }}
       runs-on: ${{ matrix.os }}
+      
       strategy:
+          fail-fast: false
           matrix:
               node-version: [16.x,18.x,20.x]
               os: [ubuntu-latest, windows-latest]
@@ -21,4 +23,15 @@ jobs:
               echo "node version is ${{ matrix.node-version }}"
               echo "os is ${{ matrix.os }}"
               echo "hello world"
+     include-example:
+        name : ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                color: [red, green]
+                shape: [circle, square]
+                size: [small, large]
+            include:
+                color: red
+                shape: triangle
                
