@@ -9,6 +9,8 @@ on :
                 type: boolean
                 description: "use cache"
                 default: true
+env: 
+    working-directory: react-app
 jobs:
     build:
         runs-on: ubuntu-latest
