@@ -11,6 +11,7 @@ jobs:
             - run: | 
                 exit 1
     echo-hello:
+        needs: failed-job
         runs-on: ubuntu-latest
         steps:
             - run: echo "hello world !!"
