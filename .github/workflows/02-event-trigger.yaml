@@ -1,4 +1,4 @@
-name: event-trigger-workflow
+name: 02-event-trigger-workflow
 on:
     push:
         branches:
