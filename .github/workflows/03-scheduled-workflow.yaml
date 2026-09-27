@@ -1,0 +1,12 @@
+name : 03-scheduled-workflow
+on:
+    schedule:
+        - cron: '*/5 * * * *'
+
+jobs:
+    scheduled-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name : Trigger 03-scheduled-workflow
+              run: |
+                echo "event was triggered on ${{ github.ref}} event"
