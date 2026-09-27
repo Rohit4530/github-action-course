@@ -1,0 +1,11 @@
+name: 01-first-workflow
+on:
+    push:
+        branches:
+            - development
+
+jobs:
+    echo-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "hello world"
