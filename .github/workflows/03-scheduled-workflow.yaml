@@ -10,4 +10,4 @@ jobs:
         steps:
             - name : Trigger 03-scheduled-workflow
               run: |
-                echo "event was triggered on ${{ github.ref}} event"
+                echo "event was triggered on ${{ github.run_id }} event"
