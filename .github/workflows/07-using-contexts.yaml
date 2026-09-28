@@ -1,0 +1,26 @@
+name: 07-using-contexts
+run-name: ${{ github.workflow }}-${{ github.run_id }}-${{ inputs.name }}
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: 'Enter your name'
+                required: true
+                default: 'Rohit'
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name : display context values
+              run: |
+                echo "Workflow name: ${{ github.workflow }}"
+                echo "Workflow run ID: ${{ github.run_id }}"
+                echo "Workflow run number: ${{ github.run_number }}"
+                echo "Workflow event name: ${{ github.event_name }}"
+                echo "Workflow actor: ${{ github.actor }}"
+                echo "Workflow repository: ${{ github.repository }}"
+                echo "Workflow ref: ${{ github.ref }}"
+                echo "Workflow SHA: ${{ github.sha }}"
+                echo "Workflow head ref: ${{ github.head_ref }}"
+                echo "Workflow base ref: ${{ github.base_ref }}"
+    
