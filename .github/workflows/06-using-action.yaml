@@ -7,6 +7,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+        defaults:
+            run:
+                working-directory: react-app
     deploy:
         runs-on: ubuntu-latest
         needs: build
@@ -21,7 +24,5 @@ jobs:
               run: node -v
             - name: install dependencies
               run: npm install
-              working-directory: react-app
             - name: build application
               run: npm run build
-              working-directory: react-app
