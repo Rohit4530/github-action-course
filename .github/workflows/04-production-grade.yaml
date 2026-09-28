@@ -24,6 +24,9 @@ env:
 jobs:
   lint-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react-app
     steps:
       - uses: actions/checkout@v4
 
@@ -33,11 +36,11 @@ jobs:
 
       - run: node -v
       - run: npm ci
-        if: hashFiles('package-lock.json') != ''
+        if: hashFiles('react-app/package-lock.json') != ''
       - run: npm run lint --if-present
-        if: hashFiles('package.json') != ''
+        if: hashFiles('react-app/package.json') != ''
       - run: npm test -- --ci
-        if: hashFiles('package.json') != ''
+        if: hashFiles('react-app/package.json') != ''
 
   security-scan:
     needs: lint-test
