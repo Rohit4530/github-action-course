@@ -17,6 +17,6 @@ jobs:
                 node-version: '24'
             - run: node -v
             - run: npm install
-            - run: npm start 
+            - run: npm run build
               working-directory: react-app
     
