@@ -1,0 +1,13 @@
+name : 09-functions
+on:
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps: 
+            - name : echo1
+              if: ${{github.event_name.contains('pull_request')}}
+              run: echo "Hello, World!"
