@@ -1,10 +1,10 @@
 name : execution flow
 on:
     workflow_dispatch:
-    input:
-        name: pass_unit_test
-        type: boolean
-        default: false
+        inputs:
+            pass_unit_test:
+                type: boolean
+                default: false
 
 
 jobs:
