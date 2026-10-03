@@ -3,11 +3,20 @@ on:
     pull_request:
         branches:
             - main
+            - development
     workflow_dispatch:
 jobs:
     build:
         runs-on: ubuntu-latest
         steps: 
             - name : echo1
-              if: ${{github.event_name.contains('pull_request')}}
+              if: ${{ contains(github.event_name, 'pull_request') || contains(github.event_name, 'workflow_dispatch') }}
               run: echo "Hello, World!"
+            - name : failed stage 
+              run : exit 1
+            - name : skip stage 
+              if: failure()
+              run : echo "This stage will be skipped if the previous stage fails"
+            - name : execute stage 
+              if: always()
+              run : echo "This stage will always execute, even if the previous stage fails"
